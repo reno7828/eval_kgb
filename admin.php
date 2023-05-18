@@ -43,18 +43,7 @@
         session_start();
         $_SESSION['role'] = 'admin';
         // Connexion à la base de données
-        $host = 'localhost'; // ou '127.0.0.1'
-        $dbname = 'kgbnew';
-        $user = 'root';
-        $pass = '';
-        try {
-            $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            echo "Erreur : " . $e->getMessage();
-            die();
-        }
-
+        require_once 'config.php';
         // Vérifier si le formulaire a été soumis
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -64,7 +53,7 @@
 
 
             // Requête pour récupérer les informations de l'administrateur
-            $stmt = $db->prepare("SELECT * FROM admin WHERE nom = ?");
+            $stmt = $pdo->prepare("SELECT * FROM admin WHERE nom = ?");
             $stmt->debugDumpParams();
             $stmt->execute([$nom]);
             $admin = $stmt->fetch();
