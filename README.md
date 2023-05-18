@@ -1,6 +1,7 @@
 # eval_kgb
 
 Pour le test => creer une base de donnée kgbnew dans phpmyadmin 5.2.0
+Importer le fichier kgbnew.sql dans phpmyadmin
 ouvrer vscode (ou autre) puis lancer php server.
 
 
