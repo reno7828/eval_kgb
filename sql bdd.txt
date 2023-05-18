@@ -1,0 +1,68 @@
+Ajout admin => 
+
+
+INSERT INTO admin (nom, prenom, email, mot_de_passe, date_creation)
+VALUES ('admin4', 'admin4', 'admin4@admin.com', '$2y$10$hX/iBnC.Nxm2G6MSW4TOiOBq1qkTJlPAFfzIbIZr/GTfX97WZ7rHa', NOW());
+
+
+ou directement avec un mot de passe perso =>
+
+INSERT INTO admin (nom, prenom, email, mot_de_passe) 
+VALUES ('choix_nom', 'choix_prenom', 'choix_mail', PASSWORD('mot de passe perso'));
+
+
+relation =>
+
+ALTER TABLE missions
+ADD CONSTRAINT fk_agents
+FOREIGN KEY (agents_id)
+REFERENCES agents(id);
+
+ALTER TABLE missions
+ADD CONSTRAINT fk_contact
+FOREIGN KEY (contacts_id)
+REFERENCES contact(id);
+
+ALTER TABLE missions
+ADD CONSTRAINT fk_cibles
+FOREIGN KEY (cibles_id)
+REFERENCES cibles(id);
+
+ALTER TABLE missions
+ADD CONSTRAINT fk_planque
+FOREIGN KEY (planques_id)
+REFERENCES planque(id);
+
+
+Contacts aleatoire => 
+
+INSERT INTO contact (nom, prenom, date_naissance, nom_code, nationalite) VALUES
+    ('Ivanov', 'Ivan', '1985-01-01', 'ivanov_i', 'Russie'),
+    ('Dubois', 'Marie', '1990-03-15', 'dubois_m', 'France'),
+    ('Schmidt', 'Hans', '1982-07-20', 'schmidt_h', 'Allemagne'),
+    ('Kim', 'Soo-Jin', '1995-12-05', 'kim_sj', 'Coree'),
+    ('Li', 'Ming', '1988-06-30', 'li_m', 'Chine');
+
+
+Planques aleatoire => 
+
+INSERT INTO planque (code, adresse, pays, type) VALUES ('PLQ2', '10 rue de la Paix', 'France', 'Appartement');
+INSERT INTO planque (code, adresse, pays, type) VALUES ('PLQ3', '2 avenue des Champs-Elysées', 'France', 'Maison');
+INSERT INTO planque (code, adresse, pays, type) VALUES ('PLQ4', '25 avenue Montaigne', 'France', 'Hôtel');
+INSERT INTO planque (code, adresse, pays, type) VALUES ('PLQ5', '6 Friedrichstrasse', 'Allemagne', 'Maison');
+INSERT INTO planque (code, adresse, pays, type) VALUES ('PLQ6', '10 Gorky Street', 'Russie', 'Hôtel');
+
+
+
+
+Cibles aleatoire => 
+
+
+INSERT INTO cibles (nom, prenom, date_naissance, nom_code, nationalite)
+VALUES 
+    ('Cible1', 'Prenom1', '1990-01-01', 'CODE1', 'Russie'),
+    ('Cible2', 'Prenom2', '1985-02-12', 'CODE2', 'France'),
+    ('Cible3', 'Prenom3', '1978-07-23', 'CODE3', 'Allemagne'),
+    ('Cible4', 'Prenom4', '1983-12-15', 'CODE4', 'Coree'),
+    ('Cible5', 'Prenom5', '1995-09-09', 'CODE5', 'Chine');
+

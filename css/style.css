@@ -1,0 +1,259 @@
+body {
+    background-image: url('../assets/kgb.jpg');
+    background-size: cover;
+}
+
+
+/* Styles pour le formulaire de connexion */
+
+form {
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #3E8E41;
+}
+
+.error {
+    color: #FF0000;
+    margin-bottom: 10px;
+}
+
+
+/* Page accueil */
+
+.missionsAgent {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    margin: 20px;
+    margin-top: 5em;
+    margin-left: 5em;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    width: 500px;
+    color: rgba(13, 248, 24, 0.514);
+}
+
+.card-accueil {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card-accueil-body {
+    margin-top: 20px;
+    font-size: 2em;
+    line-height: 1.5;
+    color: rgba(13, 248, 24, 0.514);
+}
+
+.accueil-button {
+    /* Style général de la modal */
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Style pour le bouton d'ouverture de la modal */
+    .button {
+        background-color: #5cb85c;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 18px;
+        margin-left: 5em;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+        margin-top: 2em;
+    }
+    /* Style pour le bouton d'ouverture de la modal au survol */
+    .button:hover {
+        background-color: #4cae4c;
+    }
+}
+
+
+/* Partie admin */
+
+.connect_admin {
+    margin-top: 25em;
+}
+
+.admin_visu {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    margin: 20px;
+    margin-top: 5em;
+    margin-left: 3em;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    width: 500px;
+    color: rgba(13, 248, 24, 0.514);
+    font-size: 2em;
+}
+
+.card-accueil {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card-accueil-body {
+    margin-top: 20px;
+    font-size: 2em;
+    line-height: 1.5;
+    color: rgba(13, 248, 24, 0.514);
+}
+
+.card-admin {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    margin: 50px;
+    padding: 20px;
+}
+
+.card-admin h2 {
+    margin-bottom: 20px;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn {
+    background-color: #a3ee4d7e;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #222;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #222;
+    color: #fff;
+}
+
+.retour {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.retour:hover {
+    background-color: #3e8e41;
+}
+
+.succes {
+    display: flex;
+    justify-content: center;
+    margin-top: 10em;
+    font-size: 2em;
+    color: aliceblue;
+}
+
+.retour_dashboard {
+    margin-left: 5em;
+}
+
+
+/* partie consultation mission de l'agent */
+
+.consultation {
+    background: rgba(204, 62, 62, 0.719);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 7.5px);
+    -webkit-backdrop-filter: blur( 7.5px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    color: rgb(33, 240, 14);
+    font-size: 2em;
+    max-width: 800px;
+    max-height: auto;
+    text-align: center;
+    margin: auto;
+    margin-top: 5em;
+}
+
+
+/* partie home */
+
+.connect {
+    color: aliceblue;
+    margin-top: 5em;
+    margin-left: 5em;
+    font-size: 2em;
+}
+
+.accueilButton {
+    font-size: 2em;
+    margin-left: 5em;
+}
