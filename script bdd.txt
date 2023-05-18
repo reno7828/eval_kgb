@@ -1,0 +1,90 @@
+script creation bdd en php
+
+<?php
+// Informations de connexion à la base de données
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+try {
+    // Connexion à la base de données MySQL
+    $conn = new PDO("mysql:host=$servername;", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Création de la base de données "kgbnew"
+    $createDatabaseQuery = "CREATE DATABASE IF NOT EXISTS kgbnew";
+    $conn->exec($createDatabaseQuery);
+    echo "Base de données 'kgbnew' créée avec succès.";
+
+    // Connexion à la base de données "kgbnew"
+    $conn = new PDO("mysql:host=$servername;dbname=kgbnew", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Création de la table "missions"
+    $createMissionsTableQuery = "CREATE TABLE IF NOT EXISTS missions (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        titre VARCHAR(255) NOT NULL,
+        description TEXT,
+        nom_code VARCHAR(255),
+        pays VARCHAR(255),
+        type VARCHAR(255),
+        statut VARCHAR(255),
+        specialite VARCHAR(255),
+        date_debut DATE,
+        date_fin DATE,
+        agents_id INT,
+        contacts_id INT,
+        cibles_id INT,
+        planques_id INT
+    )";
+    $conn->exec($createMissionsTableQuery);
+    echo "Table 'missions' créée avec succès.";
+
+    // Création de la table "agents"
+    $createAgentsTableQuery = "CREATE TABLE IF NOT EXISTS agents (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nom VARCHAR(255) NOT NULL,
+        prenom VARCHAR(255) NOT NULL,
+        date_naissance DATE,
+        code_identification_hash VARCHAR(255),
+        nationalite VARCHAR(255),
+        specialites VARCHAR(255)
+    )";
+    $conn->exec($createAgentsTableQuery);
+    echo "Table 'agents' créée avec succès.";
+
+    // Création de la table "cibles"
+    $createCiblesTableQuery = "CREATE TABLE IF NOT EXISTS cibles (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nom VARCHAR(255) NOT NULL,
+        prenom VARCHAR(255) NOT NULL,
+        date_naissance DATE,
+        nom_code VARCHAR(255),
+        nationalite VARCHAR(255)
+    )";
+    $conn->exec($createCiblesTableQuery);
+    echo "Table 'cibles' créée avec succès.";
+
+    // Création de la table "contact"
+    $createContactTableQuery = "CREATE TABLE IF NOT EXISTS contact (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nom VARCHAR(255) NOT NULL,
+        prenom VARCHAR(255) NOT NULL,
+        date_naissance DATE,
+        nom_code VARCHAR(255),
+        nationalite VARCHAR(255)
+    )";
+    $conn->exec($createContactTableQuery);
+    echo "Table 'contact' créée avec succès.";
+
+    // Création de la table "planque"
+    $createPlanqueTableQuery = "CREATE TABLE IF NOT EXISTS planque (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        code VARCHAR(255) NOT NULL,
+        adresse TEXT,
+        pays VARCHAR(255),
+        type VARCHAR(255)
+    )";
+    $conn->exec($createPlanqueTableQuery);
+    echo "Table 'planque' créée avec succès.";
+} catch(PDOException
