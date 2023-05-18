@@ -3,6 +3,8 @@
 Pour le test => creer une base de donnée kgbnew dans phpmyadmin 5.2.0
 Importer le fichier kgbnew.sql dans phpmyadmin
 ouvrer vscode (ou autre) puis lancer php server.
+Ou lancer le script bdd qui va créer la base de donnees.
+Vous trouverez aussi des requetes sql toutes pretes dans le dossier sql bdd.txt
 
 
 IMPORTANT
